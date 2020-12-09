@@ -127,3 +127,82 @@ The smaller the standard deviation, the more the data is clustered around the me
 ```
 np.std(var)
 ```
+
+### Histogram
+
+* bins 
+* frequency 
+
+### Types of Distributions
+
+* unimodal dataset has only one distinct peak.
+* bimodal dataset has two distinct peaks.
+* multimodal dataset has more than two peaks.
+* uniform dataset doesn’t have any distinct peaks.
+
+* symmetric dataset has equal amounts of data on both sides of the peak.
+* skew-right dataset has a long tail on the right of the peak, but most of the data is on the left.
+* skew-left dataset has a long tail on the left of the peak, but most of the data is on the right.
+
+>  type of distribution affects the position of the mean and median. In heavily skewed distributions, the mean becomes a less useful measurement.
+
+### Normal Distribution
+
+* normal distribution, which is a symmetric, unimodal distribution.
+
+* The mean sets the “middle” of the distribution, and the standard deviation sets the “width” of the distribution. A larger standard deviation leads to a wider distribution. A smaller standard deviation leads to a skinnier distribution
+
+
+* np.random.normal(loc,scale,size)
+generating random numbers, including one specifically built to generate a set of numbers that fit a normal distribution
+
+loc: the mean for the normal distribution
+scale: the standard deviation of the distribution
+size: the number of random numbers to generate
+
+```
+b_data = np.random.normal(6.7,0.7,1000)
+
+# Fictionosaurus
+f_data = np.random.normal(7.7,0.3,1000)
+
+mystery_dino = 'Brachiosaurus'
+answer = False
+
+plt.hist(b_data,
+         bins=30, range=(5, 8.5), histtype='step',
+         label='Brachiosaurus')
+plt.hist(f_data,
+         bins=30, range=(5, 8.5), histtype='step',
+         label='Fictionosaurus')
+plt.xlabel('Femur Length (ft)')
+plt.legend(loc=2)
+plt.show()
+
+```
+
+### Standard Deviations and Normal Distribution
+
+standard deviation affects the “shape” of our normal distribution
+
+Suppose that we have a normal distribution with a mean of 50 and a standard deviation of 10. When we say “within one standard deviation of the mean”, 
+
+```
+lower_bound = mean - std
+            = 50 - 10
+            = 40
+ 
+upper_bound = mean + std
+            = 50 + 10
+            = 60
+```
+
+
+```
+68% of our samples will fall between +/- 1 standard deviation of the mean
+95% of our samples will fall between +/- 2 standard deviations of the mean
+99.7% of our samples will fall between +/- 3 standard deviations of the mean
+```
+
+
+
