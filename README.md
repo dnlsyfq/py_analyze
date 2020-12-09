@@ -203,6 +203,22 @@ upper_bound = mean + std
 95% of our samples will fall between +/- 2 standard deviations of the mean
 99.7% of our samples will fall between +/- 3 standard deviations of the mean
 ```
+> 2000 students took the exam. How many would you expect to have scores within the range of one_above and one_below?
 
 
+
+```
+one_above = 1000 + 100
+one_below = 1000 -100
+
+print(one_above, one_below)
+
+one_std = np.random.normal(1000,100,2000)
+
+expected_std= one_std[(one_std > one_below) & (one_std< one_above)]
+
+or 
+
+one_std  = 2000 * 68 / 100
+```
 
