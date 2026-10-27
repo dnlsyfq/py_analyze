@@ -222,3 +222,12 @@ or
 one_std  = 2000 * 68 / 100
 ```
 
+* grouped.agg(< >)
+```
+def diff(group):
+    return group.mean() - group.min()
+
+grouped.agg([np.mean,np.max])
+grouped.agg(np.mean)
+grouped.agg(diff)
+```
