@@ -231,3 +231,12 @@ grouped.agg([np.mean,np.max])
 grouped.agg(np.mean)
 grouped.agg(diff)
 ```
+
+* df.pivot_table(<>)
+```
+df.pivot_table(
+    index='Region',values='Happiness Score',aggfunc=np.mean,margins=True
+)
+
+
+```
